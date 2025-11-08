@@ -1,0 +1,27 @@
+// Simplified Color Palette
+// Core tokens: primary, dark, secondary, accent (+ neutrals)
+$color-primary: #5fa8d3; // picton blue - vibrant primary
+$color-dark: #1b4965; // indigo dye - dark/base text
+$color-secondary: #62b6cb; // moonstone - supporting
+$color-accent: #bee9e8; // mint green - accent / emphasis
+
+// Optional soft background kept (not part of the requested minimal set)
+$white: #ffffff;
+$color-soft-bg: #cae9ff; // columbia blue (background usage if needed)
+
+// Neutrals (retain for typography contrast)
+$text-dark: $color-dark;
+$text-light: #718096;
+
+// Hero gradient (preserved from previous palette preference)
+$hero-gradient: linear-gradient(135deg, $color-dark, $color-primary, $color-secondary, $color-accent, $color-soft-bg);
+
+// Shadows (generic, decoupled from old colors)
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+// Utility Function (kept for future transparency tweaks)
+@function alpha($color, $amount) {
+    @return rgba(red($color), green($color), blue($color), $amount);
+}

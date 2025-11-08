@@ -1,0 +1,20 @@
+// Main Stylesheet - Modular Architecture
+// Import order: variables → mixins → base → components → responsive
+
+// 1. Variables
+@use 'colors' as *;
+
+// 2. Mixins
+@use 'mixins' as *;
+
+// 3. Base styles
+@use 'base';
+
+// 4. Components/Sections
+@use 'hero';
+@use 'about';
+@use 'work-history';
+@use 'footer';
+
+// 5. Responsive overrides
+@use 'responsive';

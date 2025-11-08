@@ -1,0 +1,141 @@
+// Work History Section
+@use 'colors' as *;
+@use 'mixins' as *;
+
+.work-history {
+    padding: 4rem 0;
+    background: $white;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        text-align: center;
+        color: $color-dark;
+    }
+}
+
+#work-history-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 3rem;
+
+    // Timeline line
+    &::before {
+        content: '';
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        background: linear-gradient(180deg, $color-dark 0%, $color-primary 100%);
+        border-radius: 2rem;
+    }
+}
+
+.job {
+    position: relative;
+    background: $white;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: $shadow-sm;
+    @include transition(all);
+    border-left: 3px solid $color-dark;
+
+    // Timeline dot
+    &::before {
+        content: '';
+        position: absolute;
+        left: -3rem;
+        top: 5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: $white;
+        border: 3px solid $color-dark;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px $color-accent;
+        @include transition(all);
+    }
+
+    &:hover {
+        box-shadow: none;
+        border-left-color: $color-primary;
+
+        &::before {
+            background: $color-accent;
+            box-shadow: none;
+            transform: scale(1.2);
+        }
+    }
+
+    &-header {
+        margin-bottom: 0.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        color: $color-dark;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    .company {
+        font-size: 1rem;
+        color: $color-primary;
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+    }
+
+    .location {
+        font-size: 0.875rem;
+        color: $color-secondary;
+        margin-bottom: 0.25rem;
+    }
+
+    .duration {
+        color: $color-dark;
+        font-size: 0.75rem;
+        font-style: italic;
+        opacity: 0.8;
+    }
+
+    .description {
+        color: $color-dark;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+    }
+
+    .highlights {
+        margin-top: 1.5rem;
+
+        h4 {
+            font-size: 1rem;
+            color: $color-primary;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            color: $color-dark;
+            line-height: 1.6;
+
+            &:before {
+                content: "✓";
+                position: absolute;
+                left: 0;
+                color: $color-primary;
+                font-weight: bold;
+            }
+        }
+    }
+}

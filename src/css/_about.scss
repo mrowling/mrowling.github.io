@@ -1,0 +1,63 @@
+// About Section
+@use 'colors' as *;
+@use 'mixins' as *;
+
+.about {
+    padding: 4rem 0;
+    text-align: center;
+    background: $white;
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        color: $color-dark;
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+        color: $color-primary;
+        margin-bottom: 2rem;
+    }
+
+    .bio {
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        font-size: 1.125rem;
+        color: $color-dark;
+        line-height: 1.8;
+    }
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: $color-accent;
+    color: $color-dark;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    @include transition;
+    border: 2px solid transparent;
+
+    &:hover {
+        background: $color-primary;
+        color: $white;
+        border-color: $color-primary;
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+    }
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}

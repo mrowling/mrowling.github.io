@@ -1,0 +1,14 @@
+// Footer
+@use 'colors' as *;
+
+footer {
+    background: $color-dark;
+    color: $white;
+    padding: 2rem 0;
+    text-align: center;
+
+    p {
+        margin: 0;
+        opacity: 0.8;
+    }
+}
