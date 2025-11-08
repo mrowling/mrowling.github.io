@@ -54,7 +54,7 @@
     @include transition(color);
 
     &:hover {
-        color: $color-accent;
+        color: $text-dark;
     }
 }
 
