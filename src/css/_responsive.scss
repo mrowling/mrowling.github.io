@@ -35,6 +35,9 @@
     }
 
     .job {
+        flex-direction: column;
+        align-items: flex-start;
+
         &::before {
             left: -2.25rem;
             width: 1rem;
@@ -44,6 +47,13 @@
         &:hover {
             transform: translateX(4px);
         }
+    }
+
+    .company-logo {
+        width: 80px;
+        height: 80px;
+        align-self: flex-end;
+        margin-top: 1rem;
     }
 
     .job-header {

@@ -42,6 +42,10 @@
     box-shadow: $shadow-sm;
     @include transition(all);
     border-left: 3px solid $color-dark;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 
     // Timeline dot
     &::before {
@@ -71,6 +75,7 @@
 
     &-header {
         margin-bottom: 0.5rem;
+        flex: 1;
     }
 
     h3 {
@@ -137,5 +142,31 @@
                 font-weight: bold;
             }
         }
+    }
+}
+
+.company-logo {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $white;
+    border-radius: 8px;
+    padding: 0.5rem;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        @include transition(all);
+    }
+
+    .job:hover & img {
+        filter: grayscale(0%);
+        opacity: 1;
     }
 }
