@@ -1,0 +1,202 @@
+// Portfolio Section
+@use 'colors' as *;
+@use 'mixins' as *;
+
+// Portfolio Navigation Bar
+.portfolio-nav {
+    background: $hero-gradient;
+    padding: 1rem 2rem;
+    box-shadow: $shadow-sm;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    @include transition(opacity);
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    #svg-container {
+        height: 40px;
+        width: auto;
+
+        svg {
+            height: 100%;
+            width: auto;
+            filter: none;
+        }
+    }
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: $text-light;
+    text-decoration: none;
+    font-weight: 500;
+    @include transition(color);
+
+    &:hover {
+        color: $color-accent;
+    }
+}
+
+.portfolio {
+    padding: 4rem 0;
+    background: $white;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: $color-dark;
+    }
+
+    .section-intro {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 3rem;
+        color: $text-light;
+        font-size: 1.1rem;
+    }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: $white;
+    border-radius: 12px;
+    box-shadow: $shadow-sm;
+    @include transition(all);
+    border: 1px solid $color-accent;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &:hover {
+        box-shadow: $shadow-md;
+        transform: translateY(-2px);
+    }
+}
+
+.project-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid $color-accent;
+
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: $color-dark;
+    }
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: $color-soft-bg;
+    color: $color-primary;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.project-body {
+    padding: 1.5rem;
+    flex: 1;
+
+    .project-description {
+        color: $color-dark;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .project-features {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0 0 0;
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: $text-light;
+            line-height: 1.5;
+
+            &::before {
+                content: '▸';
+                position: absolute;
+                left: 0;
+                color: $color-primary;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.project-footer {
+    padding: 1.5rem;
+    border-top: 1px solid $color-accent;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: $color-dark;
+    color: $white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    @include transition(background);
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    &:hover {
+        background: $color-primary;
+    }
+}
+
+.project-note {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    color: $text-light;
+    font-style: italic;
+    font-size: 0.9rem;
+}
