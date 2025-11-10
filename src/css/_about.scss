@@ -64,11 +64,19 @@
 
 .portfolio-link-container {
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .cta-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     padding: 1rem 2rem;
+    min-width: 240px;
     background: $color-dark;
     color: $white;
     text-decoration: none;
@@ -77,6 +85,12 @@
     font-size: 1.1rem;
     @include transition;
     border: 2px solid $color-dark;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    }
 
     &:hover {
         background: $color-primary;
