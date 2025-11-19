@@ -25,6 +25,19 @@
         font-size: 1.125rem;
         color: $color-dark;
         line-height: 1.8;
+
+        .inline-link {
+            color: $color-primary;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid $color-accent;
+            @include transition;
+
+            &:hover {
+                color: $color-secondary;
+                border-bottom-color: $color-secondary;
+            }
+        }
     }
 }
 
